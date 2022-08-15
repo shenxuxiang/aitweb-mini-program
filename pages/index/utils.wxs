@@ -1,3 +1,0 @@
-module.exports.getWidthStyle = function(width, unit) {
-  return 'width:' + width + unit;
-}
