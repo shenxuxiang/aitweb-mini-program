@@ -1,0 +1,32 @@
+<block>
+  <modal
+    visible="{{visible}}"
+    style="width: 560rpx; height: 320rpx;"
+    opacity="{{0.8}}"
+    bind:onCancel="handleCloseModal"
+  >
+    <view class="consult-modal-content">
+      <view class="consult-modal-content-title">报名咨询不收取任何费用</view>
+      <view class="consult-modal-content-button-group">
+        <button class="consult-modal-content-button" bindtap="handleConsultWechat">微信咨询</button>
+        <button class="consult-modal-content-button" bindtap="handleConsultPhone">电话咨询</button>
+      </view>
+    </view>
+  </modal>
+  <modal
+    visible="{{showQrCodeModal}}"
+    style="width: 360rpx; height: 360rpx;"
+    opacity="{{0.8}}"
+    bind:onCancel="handleCloseQrCodeModal"
+  >
+    <view class="qrcode-modal-content">
+      <image
+        src="{{qrCode}}"
+        mode="aspectFill"
+        class="ercode-modal-image"
+        show-menu-by-longpress
+      />
+      <view class="qrcode-modal-text">长安图片识别二维码</view>
+    </view>
+  </modal>
+</block>

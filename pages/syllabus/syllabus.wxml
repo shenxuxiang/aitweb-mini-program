@@ -1,0 +1,24 @@
+<view class="page-syllabus">
+  <view class="syllabus-header">
+    <view class="syllabus-header-title">{{title}}</view>
+    <view class="syllabus-header-introduce">{{introduce}}</view>
+  </view>
+  <view
+    class="syllabus-module"
+    wx:for="{{modules}}"
+    wx:key="title"
+    wx:for-item="module"
+  >
+    <view class="syllabus-module-title">{{module.title}}</view>
+    <view class="syllabus-module-content">
+      <view
+        class="syllabus-module-content-item"
+        wx:for="{{module.list}}"
+        wx:key="*this"
+      >
+        {{index + 1}}、{{item}}
+      </view>
+    </view>
+  </view>
+  <view class="safe-area"/>
+</view>

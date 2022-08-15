@@ -1,0 +1,48 @@
+.ait-modal-fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.ait-modal-fixed.show {
+  visibility: visible;
+}
+.ait-modal-fixed.hide {
+  transition: visibility linear 0ms 300ms;
+  visibility: hidden;
+}
+.ait-modal-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  transition: opacity 300ms ease;
+}
+.ait-modal-mask.hide {
+  opacity: 0 !important;
+}
+.ait-modal-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 650rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+  z-index: 1;
+}
+.ait-modal-content.hide {
+  transition: transform cubic-bezier(.72, -0.36, .95, .62) 300ms;
+  transform: scale(0);
+}
+.ait-modal-content.show {
+  transition: transform ease 300ms;
+  transform: scale(1);
+}

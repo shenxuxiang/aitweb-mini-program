@@ -1,0 +1,55 @@
+.page-syllabus {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.syllabus-header {
+  margin: 20rpx 0;
+  padding: 0 16rpx;
+}
+.syllabus-header-title {
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 1;
+  color: block;
+  font-weight: bold;
+}
+.syllabus-header-introduce {
+  text-indent: 2em;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.5;
+}
+
+.syllabus-module-title {
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: rgba(4, 98, 234, 1);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.syllabus-module-content-item {
+  width: 750rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.syllabus-module-content-item:nth-child(2n + 1) {
+  background: #f8f8f8;
+}
+
+.safe-area {
+  height: constant(safe-area-inset-bottom);
+  height: env(safe-area-inset-bottom);
+  background: transparent;
+}

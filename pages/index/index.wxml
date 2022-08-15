@@ -1,0 +1,114 @@
+<view class="index-page" wx:if="{{activityInProgress}}">
+  <swiper
+    indicator-dots
+    autoplay
+    circular
+    interval="{{7000}}"
+    duration="{{500}}"
+    class="carousel"
+  >
+    <swiper-item wx:for="{{banners}}" wx:key="*this">
+      <image src="{{item}}" class="carousel-img" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="count-down">
+    <view class="count-down-box">
+      <view class="cound-down-box-title">预约报名截止时间</view>
+      <view class="cound-down-box-body">
+        <view class="cound-down-box-body-left">
+          <view class="cound-down-box-body-left-date">{{cutOffTime}}</view>
+          <view class="cound-down-box-body-left-remaining-time">还剩 {{days}} 天</view>
+        </view>
+        <view class="cound-down-box-body-right">
+          <view class="cound-down-box-body-right-countdown">{{ countdown }}</view>
+          <view class="cound-down-box-body-right-signup" bindtap="handleClickConsultButton">立即咨询 >></view>
+        </view>
+      </view>
+      <view class="count-down-friendly-tips">{{friendlyTips}}</view>
+    </view>
+  </view>
+
+  <view class="course">
+    <view class="course-title">课程大纲</view>
+    <view class="course-list">
+      <view
+        wx:for="{{courses}}"
+        wx:key="icon"
+        class="course-list-item"
+        data-options="{{item.options}}"
+        bindtap="handleNavigate"
+      >
+        <view class="course-list-item-icon">
+          <icon name="{{item.icon}}" style="font-size: 100rpx; margin-right: 10rpx;"/>
+        </view>
+        <view class="course-list-item-title">{{item.context}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="industry-price">
+    <view class="industry-price-title">行业薪资</view>
+    <view class="industry-price-content">
+      <view class="industry-price-content-item" wx:for="{{industryPrice}}" wx:key="experience">
+        <view class="industry-price-content-item-year">{{item.experience}}</view>
+        <view class="industry-price-content-item-progressbar">
+          <view class="industry-price-content-item-progressbar-thumb" style="width: {{item.progress}}%"/>
+        </view>
+        <view class="industry-price-content-item-price">{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="characteristic">
+    <view class="characteristic-title">完整培训生态链 成就高薪之路</view>
+    <view class="characteristic-item" wx:for="{{characteristic}}" wx:key="subtitle">
+      <view class="characteristic-item-title">{{item.subtitle}}</view>
+      <view class="characteristic-item-context">{{item.context}}</view>
+    </view>
+  </view>
+
+  <view class="advantages">
+    <view class="advantages-title">教学特色</view>
+    <view class="advantages-item" wx:for="{{advantages}}" wx:key="icon">
+      <view class="advantages-item-left">
+        <icon name="{{item.icon}}" style="font-size: 80rpx; color: #fff; opacity: 0.7;"/>
+      </view>
+      <view class="advantages-item-right">{{item.context}}</view>
+    </view>
+  </view>
+
+  <view class="teacher">
+    <view class="teacher-left">
+      <image src="{{teacherInfo.avatar}}" mode="aspectFill" class="teacher-left-avatar"/>
+    </view>
+    <view class="teacher-right">
+      <view class="teacher-right-name">{{teacherInfo.name}}</view>
+      <view class="teacher-right-introduce">{{teacherInfo.introduce}}</view>
+    </view>
+  </view>
+
+  <view class="about">
+    <image src="../../static/images/3.jpg" mode="aspectFill" class="about-bg"/>
+    <view class="about-title">关于艾特</view>
+    <view class="about-context">
+      <view class="about-context-section" wx:for="{{about}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="address">
+    <view class="address-text">地址： {{address.name}}</view>
+    <icon
+      name="dizhi"
+      style="color: #f80; font-size: 50rpx; padding: 0 20rpx;"
+      bindtap="handleOpenLocation"
+    />
+  </view>
+
+  <consult-modal
+    visible="{{showConsultModal}}"
+    phoneNumber="18226707203"
+    qrCode="{{contact.qrcode}}"
+    bind:onCancel="handleCloseConsultModal"
+  />
+</view>

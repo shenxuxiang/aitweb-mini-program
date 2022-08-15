@@ -1,0 +1,48 @@
+.consult-modal-content {
+  margin-top: 60rpx;
+}
+.consult-modal-content-title {
+  font-size: 34rpx;
+  color: block;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+.consult-modal-content-button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+}
+.consult-modal-content-button.consult-modal-content-button {
+  width: 200rpx;
+  height: 68rpx;
+  padding: 0;
+  margin: 0;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #fff;
+  background: #0462ea;
+}
+.consult-modal-content-button + .consult-modal-content-button {
+  margin-left: 40rpx;
+}
+.qrcode-modal-content {
+  height: 100%;
+}
+.ercode-modal-image {
+  display: block;
+  width: 260rpx;
+  height: 260rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  object-fit: contain;
+  border-radius: 6rpx;
+}
+.qrcode-modal-text {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 60rpx;
+}

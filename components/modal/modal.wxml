@@ -1,0 +1,13 @@
+<view class="ait-modal-fixed{{visible ? ' show' : ' hide'}}">
+  <view
+    class="ait-modal-mask{{visible ? ' show' : ' hide'}}"
+    style="opacity: {{opacity}}"
+    bindtap="handleClose"
+  />
+  <view
+    class="ait-modal-content{{visible ? ' show' : ' hide'}}"
+    style="{{style}}"
+  >
+    <slot />
+  </view>
+</view>

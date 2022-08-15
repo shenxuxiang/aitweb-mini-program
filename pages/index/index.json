@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#0462ea",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "icon": "../../components/icon/icon",
+    "consult-modal": "../../components/consult-modal/consult-modal",
+    "modal": "../../components/modal/modal"
+  }
+}
