@@ -28,6 +28,9 @@
 .consult-modal-content-button + .consult-modal-content-button {
   margin-left: 40rpx;
 }
+.consult-modal-content-button:active {
+  background: #1d78fb;
+}
 .qrcode-modal-content {
   height: 100%;
 }
