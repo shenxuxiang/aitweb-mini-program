@@ -197,7 +197,7 @@
 }
 .industry-price-content-item-progressbar {
   width: 400rpx;
-  height: 20rpx;
+  height: 18rpx;
   margin: 0 10rpx;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10rpx;
@@ -206,7 +206,7 @@
 .industry-price-content-item-progressbar-thumb {
   position: relative;
   width: 0;
-  height: 20rpx;
+  height: 18rpx;
   background: #f80;
   border-radius: 10rpx;
   overflow: hidden;

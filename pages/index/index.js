@@ -5,20 +5,37 @@ Page({
   data: {
     // 活动是否进行中
     activityInProgress: false,
+    // 轮播图
     banners: [],
+    // 关于艾特
     about: [],
+    // 行业薪资
     industryPrice: [],
+    // 培训优势
     characteristic: [],
+    // 课程大纲
     courses: [],
+    // 联系方式
     contact: {},
+    // 教学特色
     advantages: [],
+    // 报名截止日期
     cutOffTime: '0000-00-00',
+    // 倒计时
     countdown: '00:00:00',
+    // 关闭倒计时功能
+    turnOffCountdown: false,
+    // 倒计时剩余天数
     days: '0',
+    // 是否展示咨询模态框
     showConsultModal: false,
+    // 地址 { longitude, latitude, name }
     address: {},
+    // 小程序分享信息
     shareInfo: {},
+    // 授课老师信息
     teacherInfo: {},
+    // 倒计时友情提示
     friendlyTips: '',
   },
   onLoad() {
@@ -33,6 +50,7 @@ Page({
           characteristic,
           industryPrice,
           signUpCutOffTime,
+          turnOffCountdown,
           shareInfo,
           contact,
           teacherInfo,
@@ -47,7 +65,7 @@ Page({
         }
 
         // 如果报名截止时间存在，则开启倒计时。注意 signUpCutOffTime 是毫秒级别的。
-        if (signUpCutOffTime > 0) {
+        if (!turnOffCountdown && signUpCutOffTime > 0) {
           this.handleCountdown(signUpCutOffTime);
           // 创建一个倒计时的迭代器。迭代器的迭代速度以秒作为单位。
           const iterator = new Iterator(signUpCutOffTime / 1000 - Math.floor(Date.now() / 1000), 0, -1);
@@ -69,6 +87,7 @@ Page({
           contact,
           cutOffTime: dateFormat(signUpCutOffTime, 'YYYY-MM-DD'),
           activityInProgress: true,
+          turnOffCountdown,
         });
       })
       .finally(() => wx.hideLoading());
