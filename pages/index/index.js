@@ -73,6 +73,20 @@ Page({
       })
       .finally(() => wx.hideLoading());
   },
+  onPageScroll(event) {
+    if (!this.startScroll) {
+      this.startScroll = true;
+      const list = this.data.industryPrice;
+      for (let i = 0; i < list.length; i++) {
+        const className = `.industry-price-progressbar-${i}`;
+        const item = list[i];
+        this.animate(className, [
+          { width: 0, ease: 'ease' },
+          { width: item.progress + '%', ease: 'ease' },
+        ], 1000);
+      }
+    }
+  },
   // 分享好友
   onShareAppMessage () {
     return this.data.shareInfo;

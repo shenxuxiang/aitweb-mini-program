@@ -53,7 +53,9 @@
       <view class="industry-price-content-item" wx:for="{{industryPrice}}" wx:key="experience">
         <view class="industry-price-content-item-year">{{item.experience}}</view>
         <view class="industry-price-content-item-progressbar">
-          <view class="industry-price-content-item-progressbar-thumb" style="width: {{item.progress}}%"/>
+          <view
+            class="industry-price-content-item-progressbar-thumb industry-price-progressbar-{{index}}"
+          />
         </view>
         <view class="industry-price-content-item-price">{{item.price}}</view>
       </view>
